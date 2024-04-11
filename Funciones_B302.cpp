@@ -4,10 +4,14 @@
 
 using namespace std;
 
+//Definir las funciones
+
 void DividirCifras(const string numero, int& anum, int& bnum, int& cnum);
 int Max3(int a, int b, int c);
 int Min3(int a, int b, int c);
 int Intemedio(int a, int b, int c);
+
+// Main
 
 int main () {
 
@@ -24,16 +28,20 @@ int main () {
     cout << "Menor: "<< Min3(a,b,c) << endl;
     cout << "Intermedio: " << Intemedio(a,b,c)<< endl;
 
+    return 0;
+
 }
 
-void DividirCifras(const string numero, int& anum, int& bnum, int& cnum) {
+// Declaración 
 
-    anum = stoi (numero.substr(0,4));
-    bnum = stoi (numero.substr(4,4));
+void DividirCifras(const string numero, int& anum, int& bnum, int& cnum) { //Se pide una cadena al usuario STRING, luego se utilizara numeros enteros anum,bnum,cnum
+
+    anum = stoi (numero.substr(0,4)); //stoi para convertir STRING en INT necesario para compararlos luego
+    bnum = stoi (numero.substr(4,4)); //substr para substraer cierta cantidad de cifras ---> numero.substr(posicion, numero de cifras a extraer)
     cnum = stoi (numero.substr(8,4));
 
 
-    cout << "P es: " << anum << endl;
+    cout << "P es: " << anum << endl; 
     cout << "R es: " << bnum << endl;
     cout << "C es: " << cnum << endl;
 
